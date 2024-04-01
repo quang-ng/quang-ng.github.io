@@ -18,5 +18,7 @@ Overall, as a software engineer, I am dedicated to delivering top-quality soluti
 
 I'm always available for side collaborations and talks worldwide. If you want to chat about programming, books, technology, or anything else, don’t hesitate in reaching out.
 
-- [nguyenvanquang247@gmail.com](mailto:nguyenvanquang247@gmail.com)
-- https://www.linkedin.com/in/quang-nv/
+- Email: [nguyenvanquang247@gmail.com](mailto:nguyenvanquang247@gmail.com)
+- Linkedin: <a href="https://www.linkedin.com/in/quang-nv/" target="_blank">https://www.linkedin.com/in/quang-nv/</a>
+- Github <a href="https://github.com/quang-ng"  target="_blank">https://github.com/quang-ng</a>
+
