@@ -1,10 +1,9 @@
 ---
-layout: page
+layout: about
 title: About
 permalink: /about/
 ---
-
-### About
+### About me
 
 As a software engineer, I have a passion for designing and developing high-quality software applications that meet the needs of my clients and users. With my expertise in software engineering concepts, programming languages, and software development methodologies, I am able to tackle complex problems and deliver innovative solutions.
 
@@ -14,7 +13,7 @@ Living in my area, I have access to a vibrant tech community and opportunities t
 
 Overall, as a software engineer, I am dedicated to delivering top-quality solutions that meet the needs of my clients and users. With my expertise and passion for technology, I am confident in my ability to tackle any challenge and deliver successful outcomes.
 
-### GET IN TOUCH
+### Get in touch
 
 I'm always available for side collaborations and talks worldwide. If you want to chat about programming, books, technology, or anything else, don’t hesitate in reaching out.
 
