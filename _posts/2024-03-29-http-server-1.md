@@ -44,8 +44,7 @@ Trả về version của Docker là coi như bạn đã cài đặt thành công
 Docker version 24.0.6, build ed223bc
 ```
 
-Chúng ta sẽ sử dụng Docker để đóng gói chương trình, nên Docker là tool duy nhất cần cài đặt trên máy.
-
+Chúng ta sẽ sử dụng Docker để đóng gói chương trình.
 
 ## Giới thiệu về API
 
@@ -65,14 +64,57 @@ Những API sau đều yêu cầu authentication, nếu không thì sẽ trả v
 - DELETE `/logout` - destroys session
 
 
-## Create project folder
+## Cài đặt server
 
 Mở terminal, tạo một folder cho project
 ```console
 mkdir gin-web-server
 cd gin-web-server
 ```
-Trong VS code, mở thư mục vừa tạo, tạo một file mới tên là `docker-compose.yml`
+
+Bên trong `gin-web-server` folder, chạy lênh sau
+
+```console
+go mod init todolist
+````
+Sau đó add Gin dependence.
+
+```console
+go get github.com/gin-gonic/gin
+````
+
+Sau đó tạo file `main.go` với nội dung nhưu sau
+```go
+package main
+
+import (
+  "net/http"
+  "github.com/gin-gonic/gin"
+)
+
+func main() {
+  router := gin.Default() //new gin router initialization
+  router.GET("/", func(context *gin.Context) {
+    context.JSON(http.StatusOK, gin.H{"data": "Hello World !"})    
+  }) // first endpoint returns Hello World
+  router.Run(":8000") //running application, Default port is 8080
+}
+```
+
+Và start server lên bằng câu lệnh 
+```console
+go run main.go
+```
+
+Một server đã được tạo và dang listen ở port 8000, bạn có thể test bằng cách mở trình duyệt và gõ `http://localhost:8000/` hoặc dụng curl và get respone như sau
+
+```console
+ curl http://localhost:8000
+{"data":"Hello World !"}
+```
+
+Tata!!!! chúng ta vừa mới dựng xong một server Gin, trong bài tiếp theo chúng ta sẽ đóng gói chương trình bằng Docker và cài đặt thêm Postgress vào chương trình. 
+
 
 
 

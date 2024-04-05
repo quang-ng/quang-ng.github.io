@@ -154,6 +154,20 @@ func main() {
 ```
 Link: https://go.dev/play/p/4RKr7_YO_B
 
+
+### Deadlock
+
+```go
+package main
+
+
+func main() {
+	ch := make(chan int)
+	ch <- 5
+}
+```
+A panic will happen
+
 ## Other features in Go
 - Buffered channel
 - Select and mutex
