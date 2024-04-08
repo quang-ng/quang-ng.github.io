@@ -6,6 +6,9 @@ tags: [golang, gin, http server]
 
 Trong bài trước chúng ta đã dựng được một server đơn giản bằng Gin, trong bài này chúng ta sẽ đóng gói chương trình bằng Docker, tạo Postgress SQL và thử kết nối tới server.
 
+Source code cho toàn bộ series: 
+[Github](https://github.com/quang-ng/gin-http-server-demo)
+
 ## Dockerfile
 
 Tạo một file tại root folder, với tên `Dockerfile`

@@ -6,6 +6,9 @@ tags: [golang, gin, http server]
 
 Trong bài này chúng ta sẽ cùng nhau dựng một HTTP server đơn giản bằng cách sử dụng một web framework tên là GIN (https://github.com/gin-gonic/gin). 
 
+Source code cho toàn bộ series: 
+[Github](https://github.com/quang-ng/gin-http-server-demo)
+
 Yêu cầu: xây dựng một REST API quản lý TODO, có các API như sau:
 - Đăng ký / Đăng nhập 
 - Thêm/xoá/sửa TODO, list and detail API, của user hiện tại, mọi request đều require authentication

@@ -6,6 +6,9 @@ tags: [golang, gin, http server]
 
 Trong bài trước, chúng ta đã khởi tạo Postgre database và kết nối tới server, trong bài này chúng ta sẽ tạo một table, khởi tạo seed data, thêm vài layers mới cho dự án.
 
+Source code cho toàn bộ series: 
+[Github](https://github.com/quang-ng/gin-http-server-demo)
+
 ## Thiết kế model và tạo table
 
 Tạo file `model/todo.go` và follow code:
