@@ -43,7 +43,7 @@
 
     <div id="main" role="main" class="container">
       <div class="row">
-        <div class="col-2">
+        <div class="col-lg-2 col-md-12 d-none d-lg-block">
           {% capture site_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
 {% assign tags_list = site_tags | split:',' | sort %}
 
@@ -56,8 +56,8 @@
 </div>
 <!-- End tag array header -->
         </div>
-        <div class="col-8">{{ content }}</div>
-        <div class="col-2">
+        <div class="col-lg-8 col-md-12">{{ content }}</div>
+        <div class="col-lg-2 col-md-12 d-none d-lg-block" >
           {% for post in site.posts %}
           {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
           {% capture next_year %}{{ post.previous.date | date: "%Y" }}{% endcapture %}
