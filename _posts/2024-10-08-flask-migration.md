@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Introducing Flask-Migrate\: Database Migration Management in Flask
+title: Introducing Flask-Migrate - Database Migration Management in Flask
 tags: [python]
 ---
 
