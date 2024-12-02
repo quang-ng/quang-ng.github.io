@@ -4,8 +4,6 @@ title: Understanding Tags and Fields in InfluxDB
 tags: [python, InfluxDB]
 ---
 
-## Understanding Tags and Fields in InfluxDB
-
 In InfluxDB, **tags** and **fields** are essential components used to organize and query time-series data. Here's a detailed explanation of each:
 
 ---
