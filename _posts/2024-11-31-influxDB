@@ -1,0 +1,83 @@
+---
+layout: post
+title: Getting Started with InfluxDB and Python
+tags: [python, InfluxDB]
+---
+## Introduction to InfluxDB
+
+InfluxDB is a high-performance time-series database developed by **InfluxData**, specifically designed for handling time-stamped data like metrics and events. It is optimized for queries, storage, and retrieval of data over time, making it an excellent choice for applications in monitoring, analytics, and real-time data processing.
+
+## Key Features of InfluxDB
+
+- **Time-series optimized**: Specifically designed for data with time-based patterns.
+- **Schema flexibility**: Stores data as key-value pairs in a schema-less fashion.
+- **Efficient queries**: Provides SQL-like query capabilities via **InfluxQL** or **Flux**.
+- **High availability**: Supports clustering for scalability and redundancy.
+- **Integration-ready**: Works well with monitoring tools like Grafana and Telegraf.
+
+## Common Use Cases
+
+1. **IoT Applications**: Collect and analyze sensor data from connected devices.
+2. **DevOps Monitoring**: Track system performance metrics such as CPU, memory, and disk usage.
+3. **Application Performance Monitoring (APM)**: Monitor performance and logs of distributed applications.
+4. **Finance**: Analyze high-frequency financial transaction data.
+5. **Real-time Analytics**: Process and visualize time-sensitive data in dashboards.
+
+## Installation
+
+You can download and install InfluxDB from the [official website](https://www.influxdata.com/). Alternatively, you can install it via Docker for easier management:
+
+```bash
+docker run -d -p 8086:8086 \
+  -v influxdb:/var/lib/influxdb \
+  influxdb:latest
+```
+Install Python client lib
+```bash
+pip install influxdb-client
+```
+
+## Write data and query
+```python
+from influxdb_client import InfluxDBClient, Point
+from influxdb_client.client.write_api import SYNCHRONOUS
+
+# Connection details
+url = "http://localhost:8086"
+token = "your-token-here"  # Replace with your InfluxDB token
+org = "your-org-name"      # Replace with your organization name
+bucket = "example-bucket"  # Replace with your bucket name
+
+# Initialize the client
+client = InfluxDBClient(url=url, token=token, org=org)
+
+# Write data
+write_api = client.write_api(write_options=SYNCHRONOUS)
+point = Point("temperature") \
+    .tag("location", "office") \
+    .field("value", 23.5) \
+    .time("2024-12-02T12:00:00Z")
+write_api.write(bucket=bucket, org=org, record=point)
+
+print("Data written successfully!")
+
+# Query data
+query_api = client.query_api()
+query = f'from(bucket: "{bucket}") |> range(start: -1h)'
+tables = query_api.query(query, org=org)
+
+for table in tables:
+    for record in table.records:
+        print(f'Time: {record["_time"]}, Value: {record["_value"]}')
+
+client.close()
+```
+## Explanation
+Write Data: Using the write_api, you can write points to your bucket with tags, fields, and timestamps.
+Query Data: Using the query_api, you can retrieve and process time-series data.
+
+
+## Source 
+- https://www.influxdata.com/
+- https://docs.influxdata.com/influxdb/cloud/api-guide/client-libraries/python/
+
