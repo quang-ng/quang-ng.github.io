@@ -1,8 +1,13 @@
 ---
 layout: about
-title: About
+title: Resume
 permalink: /about/
 ---
+
+### My resume
+
+[Download my CV](quang-nguyen-cv.pdf)
+
 
 ### Get in touch
 
@@ -12,8 +17,6 @@ I'm always available for side collaborations and talks worldwide. If you want to
 - Linkedin: <a href="https://www.linkedin.com/in/quang-nv/" target="_blank">https://www.linkedin.com/in/quang-nv/</a>
 - Github <a href="https://github.com/quang-ng"  target="_blank">https://github.com/quang-ng</a>
 
-### My resume
-[Download my CV](quang-nguyen-cv.pdf)
 
 ### About me
 
